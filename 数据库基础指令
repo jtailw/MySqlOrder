@@ -1,0 +1,36 @@
+创建一个名字为mydatabase数据库：  create database mydatabase ;
+查看数据库：show databases ;
+更改数据库名字 ： alter databases  Hdatabase ;
+更改数据库mydatabase的字符集 ：  alter database mydatabase charset GBK ;
+进入数据库：  use mydatabase ;
+用下面的命令来查看该数据库中的表：  show tables ;
+
+
+创建数据表
+create table if not exists userInfo (
+id int PRIMARY KEY AUTO_INCREMENT,
+name varchar(50) NOT NULL,
+password varchar(50) NOT NULL
+);
+
+
+主键问题
+主键直接在字段之后，可以有多个字段作为主键，这样的主键称为复合主键。
+没有主键，追加主键    alter  table  my_database  modify  course  char(10)  primary key;
+没有主键，追加复合主键  alter table  my_student  add  primary key (sno,cno);
+更新主键 & 删除主键  alter  table  表名 drop primary  key;
+
+当数据表中有自增长主键时，当用SQL插入语句中插入语句带有ID列值记录的时候；
+如果指定了该列的值，则新插入的值不能和已有的值重复，而且必须大于其中最大的一个值；
+也可以不指定该列的值，只将其他列的值插入，让ID还是按照MySQL自增自己填；
+这种情况在进行插入的时候，两种解决方法：
+①可以把id的值设置为null或者0，这样子mysql都会自己做处理
+②手动指定需要插入的列，不插入这一个字段的数据！
+
+
+
+--插入数据
+insert into my_student values(null,'itcast01','张三','男'),(null,'itcast02','李四','男'),(null,'itcast03','王五','女'),(null,'itcast03','男');
+
+insert into userInfo(name,password) values('ddf','8979');
+

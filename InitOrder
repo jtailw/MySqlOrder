@@ -1,1 +1,9 @@
-testdfd 
+创建数据表   
+create table if not exists dayline(
+id int PRIMARY KEY AUTO_INCREMENT,
+time DATE,      time DATETIME,
+open_price int,
+max_price int,
+min_price int,
+close_price int,
+volume int);
