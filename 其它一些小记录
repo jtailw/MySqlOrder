@@ -1,2 +1,8 @@
 hosts文件所在位置   /etc/
 强制清理hosts缓存：sudo dscacheutil -flushcache
+
+去掉开机的那一声咚～～～如果较旧的mac版本还可以试试如下命令：
+永久关闭的话，输入以下命令即可：
+sudo nvram SystemAudioVolume=%80
+恢复的话输入：
+sudo nvram -d SystemAudioVolume
