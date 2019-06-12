@@ -1,0 +1,2 @@
+hosts文件所在位置   /etc/
+强制清理hosts缓存：sudo dscacheutil -flushcache
